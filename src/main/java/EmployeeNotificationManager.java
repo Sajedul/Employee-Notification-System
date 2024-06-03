@@ -12,9 +12,9 @@ public class EmployeeNotificationManager {
         this.loggerService = loggerService;
     }
 
-    public void notifyEmployees(String filePath) {
+    public void notifyEmployees() {
         try {
-            List<Employee> employees = fileReaderService.readEmployees(filePath);
+            List<Employee> employees = fileReaderService.readEmployees();
             for (Employee employee : employees) {
                 long startTime = System.currentTimeMillis();
                 try {

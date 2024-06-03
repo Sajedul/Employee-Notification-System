@@ -7,8 +7,14 @@ import java.util.List;
 
 
 public class CSVFileReader implements FileReaderService {
+    private String filePath;
+
+    public CSVFileReader(String filePath) {
+        this.filePath = filePath;
+    }
+
     @Override
-    public List<Employee> readEmployees(String filePath) throws IOException {
+    public List<Employee> readEmployees() throws IOException {
         List<Employee> employees = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             String[] nextLine;
